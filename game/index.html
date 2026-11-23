@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASHDECK — a roguelike deck-builder</title>
+<link rel="stylesheet" href="./styles/table.css">
+<link rel="stylesheet" href="./styles/cards.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div class="hud-brand"><span class="brand-mark">▲</span> ASHDECK</div>
+    <div class="hud-floors" id="hud-floors" aria-label="Run progress"></div>
+    <div class="hud-stat hud-hp">
+      <span class="hud-label">HP</span>
+      <div class="hp-bar"><div class="hp-fill" id="hp-fill"></div><span class="hp-text" id="hp-text">60 / 60</span></div>
+    </div>
+    <div class="hud-stat"><span class="hud-label">Score</span><strong id="hud-score">0</strong></div>
+    <div class="hud-stat"><span class="hud-label">Deck</span><strong id="hud-deck-count">10</strong></div>
+  </header>
+
+  <main id="table">
+    <section id="enemy-area">
+      <div id="intent-chip" class="intent-chip"></div>
+      <div id="enemy-portrait"></div>
+      <div id="enemy-caption">
+        <div id="enemy-name">Ash Imp</div>
+        <div class="enemy-hp-bar"><div class="enemy-hp-fill" id="enemy-hp-fill"></div><span class="enemy-hp-text" id="enemy-hp-text">34 / 34</span></div>
+        <div id="enemy-statuses" class="status-row"></div>
+      </div>
+    </section>
+
+    <div id="fx-layer"></div>
+
+    <section id="combat-log" aria-label="Combat log"></section>
+
+    <section id="player-area">
+      <div id="player-badges">
+        <div class="badge" id="block-badge" title="Block"><span class="badge-glyph shield-glyph"></span><strong id="block-value">0</strong></div>
+        <div class="badge" id="energy-badge" title="Energy"><span class="badge-glyph energy-glyph">◆</span><strong id="energy-value">3 / 3</strong></div>
+        <div id="player-statuses" class="status-row"></div>
+      </div>
+      <div id="hand"></div>
+      <div id="controls">
+        <div class="pile" id="draw-pile" title="Draw pile"><span class="pile-count" id="draw-count">5</span><span class="pile-label">DRAW</span></div>
+        <button id="end-turn" type="button">END TURN <span class="key-hint">E</span></button>
+        <div class="pile" id="discard-pile" title="Discard pile"><span class="pile-count" id="discard-count">0</span><span class="pile-label">DISCARD</span></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="overlay"></div>
+</div>
+<script type="module" src="./scripts/main.js"></script>
+</body>
+</html>
